@@ -68,7 +68,6 @@ jobs:
         key: ${{matrix.elixir}}-${{hashFiles('rebar.config')}}
 
     - name: Install Hex and Rebar3 manually on older Elixir
-      if: matrix.elixir <= '1.14'
       run: |
         mix local.hex --force
         mix local.rebar --force
