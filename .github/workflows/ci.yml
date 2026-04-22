@@ -19,6 +19,7 @@ jobs:
   tests:
     name: Tests
     strategy:
+      fail-fast: false
       matrix:
         elixir: ['1.14', '1.15', '1.16', '1.17', '1.18', '1.19']
     runs-on: ubuntu-24.04-arm
@@ -80,8 +81,7 @@ jobs:
                     --with-min-erlang=12.3 \
                     --prefix=/tmp/ejabberd \
                     --enable-all \
-                    --disable-mssql \
-                    --disable-odbc
+                    --disable-mssql
         make
 
     - name: Start ejabberd
